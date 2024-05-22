@@ -1,0 +1,45 @@
+let cor;
+let posicaoHorizontal // x
+let posicaoVertical // y
+
+function setup() {
+  //cria uma tela com altura e largura de 400
+  createCanvas(400, 400);
+  //pinta o fundo da tela de branco
+   background(color(100, 0 , 0));
+  
+  cor = color(random(0,225),random(0,225),random(0,225));
+  
+  posicaoHorizontal = 200;
+  
+  posicaoVertical = 200;
+
+}
+
+function draw() {
+  //preenche a figura (circulo) de vermelho
+  fill(cor);
+  //cria um circulo com eixo x,y e raio
+  circle(posicaoHorizontal,posicaoVertical,50);
+  
+ if (mouseX < posicaoHorizontal){
+    posicaoHorizontal =  posicaoHorizontal - 1;
+  }
+  
+  if (mouseX > posicaoHorizontal){
+    posicaoHorizontal =  posicaoHorizontal + 1;
+  }
+
+if(mouseY < posicaoVertical) {
+    posicaoVertical--;
+}
+  
+if(mouseY > posicaoVertical) {
+    posicaoVertical++;
+}
+
+ if (mouseIsPressed){
+    cor = color(random(0,255), random(0,255), random(0,255), random(0,100));
+  }
+  
+}
